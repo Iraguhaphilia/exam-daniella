@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rp-ngoma-college-website
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rp-ngoma-college-website
+  template:
+    metadata:
+      labels:
+        app: rp-ngoma-college-website
+    spec:
+      containers:
+      - name: rp-ngoma-college-website
+        image: rp-ngoma-college-website:latest
+        ports:
+        - containerPort: 80
